@@ -26,6 +26,11 @@ services:
     networks:
       - postgres
 
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
 networks:
   postgres:
     driver: bridge

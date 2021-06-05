@@ -15,7 +15,9 @@ import { AuthenticationModule } from './authentication/authentication.module';
         POSTGRES_USER: Joi.string().required(),
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_DB: Joi.string().required(),
-        SESSION_SECRET: Joi.string().required()
+        SESSION_SECRET: Joi.string().required(),
+        REDIS_HOST: Joi.string().required(),
+        REDIS_PORT: Joi.number().required(),
       })
     })
   ],
