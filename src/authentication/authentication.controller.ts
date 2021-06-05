@@ -40,4 +40,12 @@ export class AuthenticationController {
   async authenticate(@Req() request: RequestWithUser) {
     return request.user;
   }
+
+  @HttpCode(200)
+  @UseGuards(CookieAuthenticationGuard)
+  @Post('log-out')
+  async logOut(@Req() request: RequestWithUser) {
+    request.logOut();
+    request.session.cookie.maxAge = 0;
+  }
 }
